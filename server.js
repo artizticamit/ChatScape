@@ -13,9 +13,15 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
+app.get("/mainChat", (req, res) => {
   res.render("mainChat", { userName: users_name });
 });
+
+app.get("/", (req, res)=>
+{
+  res.sendFile(__dirname+"/views/index.html")
+})
+
 
 app.get("/login", (req, res) => {
   res.render("login");
@@ -93,6 +99,9 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(3000, () => {
-  console.log("Server started at port 3000.");
+
+const PORT = 3001;
+
+http.listen(PORT, () => {
+  console.log(`Server started at port ${PORT}.`);
 });

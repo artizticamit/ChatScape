@@ -93,9 +93,12 @@ function erase(x) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const message = messageInput.value;
-  append(`You: ${message}`, "right");
-  socket.emit("send", message);
-  messageInput.value = "";
+  if(message != "")
+  {
+    append(`You: ${message}`, "right");
+    socket.emit("send", message);
+    messageInput.value = "";
+  }
 });
 
 myPeer.on("open", (id) => {
