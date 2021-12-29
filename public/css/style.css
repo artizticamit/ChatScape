@@ -221,7 +221,7 @@ video {
   margin: auto;
 }
 
-/******REsponsiveness************/
+/******Responsiveness************/
 @media (max-width: 376px) {
   .all {
     display: flex;
@@ -255,13 +255,14 @@ video {
   .container{
     margin: 0;
     position: absolute;
-    left: 0;
+    left: 2%;
     margin-top: 15px;
     margin-bottom: 10px;
     height: 25vh;
     padding: 10px;
     /* min-width: -webkit-fill-available; */
-    width: 100%;
+    /* width: 100%; */
+    /* overflow: hidden; */
   }
 
   .send
